@@ -1,0 +1,29 @@
+{
+  "name": "@amindunited/amu-project-scaf",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "bin": "./cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amindunited/amu-project-scaf.git"
+  },
+  "author": "Robin Buckley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amindunited/amu-project-scaf/issues"
+  },
+  "homepage": "https://github.com/amindunited/amu-project-scaf#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "sinon": "^7.3.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
+}
