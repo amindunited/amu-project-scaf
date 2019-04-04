@@ -24,6 +24,7 @@
     "sinon": "^7.3.1"
   },
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "prompt-choices": "^5.0.0"
   }
 }
