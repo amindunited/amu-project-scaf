@@ -12,72 +12,48 @@ console.log(chalk.yellow('working directory is ', process.cwd()));
 
 console.log(chalk.blue('args ', process.argv));
 
-// const userInput = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+const licences = [
+  {
+    name: 'MIT',
+    value: 'mit'
+  },
+  {
+    name: 'BSD 3',
+    value: 'BSD-3-Clause'
+  }
+];
 
-// userInput.question(`What's your name?`, (name) => {
-//   console.log(`Hi ${name}!`)
-//   // userInput.close();
-//   askChoices();
-// });
+const licenceQuestions = {
+  type: 'rawlist',
+  name: 'licence',
+  message: 'What licence type would you like to use?',
+  choices: licences
+};
 
-var choices = new Choices(['foo', 'bar', 'baz', 'qux', 'fez'], {
-  pointer: '   >>>'
-});
+const CIs = [{
+    name: 'circleCI',
+    value: 'Circle CI'
+  }, {
+    name: 'Gitlab',
+    value: 'Gitlab CI'
+  }, {
+    name: 'Travis',
+    value: 'Travis CI'
+}]
 
-choices.get('foo').disabled = true;
-// console.log(choices.get('foo'))
-// console.log(choices.get('bar'))
-// console.log(choices.render(1))
+const ciQuestions = {
+  type: 'rawlist',
+  name: 'ci',
+  message: 'Which CI would you like to use?',
+  choices: CIs
+};
 
-let questions = [{
-  type: 'expand',
-  name: 'toppings',
-  message: 'What about the toppings?',
-  choices: [
-    {
-      key: 'p',
-      name: 'Pepperoni and cheese',
-      value: 'PepperoniCheese'
-    },
-    {
-      key: 'a',
-      name: 'All dressed',
-      value: 'alldressed'
-    },
-    {
-      key: 'w',
-      name: 'Hawaiian',
-      value: 'hawaiian'
-    }
-  ]
-}, {
-  type: 'expand',
-  name: 'toppings',
-  message: 'What about the toppings?',
-  choices: [
-    {
-      key: 'p',
-      name: 'Pepperoni and cheese',
-      value: 'PepperoniCheese'
-    },
-    {
-      key: 'a',
-      name: 'All dressed',
-      value: 'alldressed'
-    },
-    {
-      key: 'w',
-      name: 'Hawaiian',
-      value: 'hawaiian'
-    }
-  ]
-}];
-
+const questions = [
+  licenceQuestions,
+  ciQuestions
+];
 inquirer.prompt(questions).then(answers => {
-  console.log('\nOrder receipt:');
+  console.log('\nLicence:');
   console.log(JSON.stringify(answers, null, '  '));
 });
 
