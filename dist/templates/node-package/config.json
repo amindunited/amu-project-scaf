@@ -1,0 +1,12 @@
+{
+  "requirements": [
+
+  ],
+  "templates": [
+    {
+      "dest": "./",
+      "name": ".editorconfig",
+      "url": ".editorconfig"
+    }
+  ]
+}
