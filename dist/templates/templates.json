@@ -1,0 +1,9 @@
+{
+  "templates": [{
+    "name": "default",
+    "URL": "https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/default/"
+  }, {
+    "name": "node-package",
+    "URL": "https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/node-package/"
+  }]
+}
