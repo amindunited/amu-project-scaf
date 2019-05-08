@@ -5,5 +5,8 @@
   }, {
     "name": "node-package",
     "URL": "https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/node-package/"
+  }, {
+    "name": "circle-ci",
+    "URL": "https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/circle-ci/"
   }]
 }

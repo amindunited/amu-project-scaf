@@ -13,20 +13,63 @@ console.log(chalk.yellow('working directory is ', process.cwd()));
 
 console.log(chalk.blue('args ', process.argv));
 
+/**
+ * Every project should have:
+ *
+ * [ ] git repo
+ * [ ] Project Name
+ * [ ] NPM Login Details
+ * [ ] NPM Scope
+ * [ ] NVMRC
+ * [ ] Description
+ * [✓] Get author name
+ * [ ] .gitignore
+ * [ ] .editorconfig
+ * [✓] LICENSE
+ * [ ] README.md
+ *      requires:
+ *        Project Name
+ *        Author
+ *        Description
+ */
+
+
+
+
+
 let templateListURL = 'https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/';
 let templateSource = 'https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/node-package/';
 let templateConfig;
 
-const getTemplateList = () => {
-  return fetch(`${templateListURL}config.json`)
+const getFullTemplateList = () => {
+  return fetch(`${templateListURL}templates.json`)
     .then((blob) => {
       return blob.json();
     })
     .then((data) => data);
 };
 
-getTemplateList()
-  .then((list) => { console.log('got the template list ', list); },
+const promptUserForTemplates = (templateList) => {
+  const options = templateList.reduce((agg, current) => {
+    console.log('aggg', agg);
+    agg.push(current.name);
+    return agg;
+  }, []);
+  const questions = {
+    type: 'checkbox',
+    name: 'templates',
+    message: 'Which templates would you like to use?',
+    choices: options
+  };
+  inquirer.prompt(questions).then(async (answers) => {
+    console.log('the answers are ', answers);
+  });
+}
+
+
+
+getFullTemplateList()
+  .then((list) => { console.log('got the template list ', list); promptUserForTemplates(list.templates); },
     (err) => { console.error(err); }
   );
 
@@ -82,11 +125,8 @@ const writeTemplate = (path, content) => {
           resolve();
           return;
         }
-
         console.error('error writting', err);
-
       })
-      // resolve()
     );
   });
 }

@@ -4,13 +4,9 @@
   ],
   "templates": [
     {
-      "dest": "./",
-      "name": ".editorconfig",
-      "url": ".editorconfig"
-    }, {
-      "dest": "./",
-      "name": ".gitignore",
-      "url": ".gitignore"
+      "dest": "./.circle-ci",
+      "name": "config.yml",
+      "url": ".circle-ci/config.yml"
     }
   ],
   "commands": {
