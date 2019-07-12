@@ -1,0 +1,31 @@
+{
+  "name": "vanilla JS",
+  "description": "An uncompiled modern javascript project",
+  "keywords": "JS, javascript, vanilla, esNext",
+  "actions": {
+    "questions": [{
+      "type": "input",
+      "name": "projectName",
+      "message": "What is the project's name?"
+    }, {
+      "type": "input",
+      "name": "email",
+      "message": "What is your email [must be the same as your NPM email]?"
+    }, {
+      "type": "input",
+      "name": "npmLogin",
+      "message": "What is your NPM login?"
+    }, {
+      "type": "password",
+      "name": "npmPassword",
+      "message": "What is your NPM password?"
+    }],
+    "pre": [],
+    "post": [],
+    "commands": [
+
+    ],
+    "files": [],
+    "features": []
+  }
+}

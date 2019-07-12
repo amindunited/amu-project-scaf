@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@amindunited/npm-cli-login": "^0.2.0",
+    "@amindunited/utils": "0.0.13",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "clui": "^0.3.6",

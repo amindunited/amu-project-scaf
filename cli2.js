@@ -33,8 +33,95 @@ console.log(chalk.blue('args ', process.argv));
  *        Description
  */
 
+ /**
+  * Set up questions:
+  * Would you like to use a full project configuration?
+  *   |
+  *    -- Which one?
+  *
+  * Which config Files would you like to add?
+  *   |
+  *   ---
+  */
+
+/**
+ * projectTemplatesDir:
+ * config.json: [
+ *  name: 'myProjectName',
+ *  url: 'http://...'
+ * ]
+ * templates/
+ *  [myProject]/
+ *    config.json: {
+ *      "questions": [
+ *        {
+ *          name:'login',
+ *          prompt: "What it your login?",
+ *          type: 'string'
+ *          },{
+ *          name:'password',
+ *          prompt: "what is your password",
+ *          type: "password"
+ *          },
+ *          {
+ *            name: "cheeses"
+ *            prompt: "what kind of cheese?",
+ *            type: "multiple",
+ *            options: [
+ *              {
+ *                name: "Brie",
+ *                value: "breeeeee"
+ *              }
+ *            ]
+ *          },
+ *          {
+ *            name: "chocolate",
+ *            prompt: "what kind of chocolate?",
+ *            type: "single",
+ *            options: [
+ *              {
+ *                name: "Dark",
+ *                value: "bitter"
+ *              }
+ *            ]
+ *          }
+ *       ],
+ *
+ *       "templates": [
+          {
+            "dest": "./.circle-ci",
+            "name": "config.yml",
+            "url": ".circle-ci/config.yml"
+          }
+        ],
+        "commands": {
+          "pre": [],
+          "post": []
+        }
+ *    }
+ */
 
 
+/**
+ * promptForTemplateURL
+ * promptForProjectConfigurations
+ *    then -> getProjectConfigurationTemplates
+ *    then -> promptForWhichProjectConfiguration
+ *    then -> addProjectQuestionsAndTemplates
+ *
+ * promptForFileTemplates
+ *    then -> getFileTemplates
+ *    then -> promptForWhichFileTemplates
+ *    then -> addFileQuestionsAndTemplates
+ *
+ * initNPM
+ * promptConfigQuestions
+ * runAllPreScripts
+ * installPackages
+ * writeFiles
+ * runAllPostScripts
+ *
+ */
 
 
 let templateListURL = 'https://raw.githubusercontent.com/amindunited/amu-project-scaf/master/dist/templates/';
